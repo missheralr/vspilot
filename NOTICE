@@ -1,0 +1,34 @@
+visionpilot-dashcam
+Copyright 2026 the visionpilot-dashcam authors
+
+This product includes software derived from Autoware Vision Pilot
+(https://github.com/autowarefoundation/autoware_vision_pilot),
+Copyright The Autoware Foundation, licensed under the Apache License,
+Version 2.0.
+
+Specifically, the following are ported from or derived from that project
+and are reproduced here under the same licence:
+
+  * the preprocessing pipeline
+    (modules/sensing/image_preprocessing/src/image_preprocessor.cpp)
+  * compute_top_crop_2_1
+    (modules/common/include/common/utils.hpp)
+  * the ImageNet normalisation constants and the fixed warped-to-world
+    matrix V (modules/models/src/inference.cpp)
+  * the output decoding for AutoDrive, AutoSteer and AutoSpeed, including
+    non-maximum suppression (modules/models/src/*.cpp)
+  * the cross-track-error and heading formulas
+    (modules/safety_guardian/fusion/src/lateral_fusion.cpp)
+  * the IDM longitudinal planner
+    (modules/safety_guardian/planning/src/longitudinal_planning.cpp)
+  * the ego-path band rendering and its acceleration colour scale
+    (modules/visualization/src/visual_interface.cpp)
+
+The ONNX model weights are downloaded at runtime from that repository and
+are not redistributed here.
+
+The temporal tracking in tracking.py is NOT a port. Upstream uses particle
+filters; this project uses constant-velocity Kalman filters to the same end.
+
+Camera calibration values in calibration.py were measured by this project
+for one specific 70mai A800S unit and are not from upstream.

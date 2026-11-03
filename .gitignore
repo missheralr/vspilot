@@ -1,0 +1,26 @@
+# model weights are downloaded by download_models.py, not committed (114 MB)
+weights/
+
+# outputs
+results/
+*.csv
+annotated.mp4
+
+# sample footage
+*.mp4
+*.MP4
+*.mov
+*.MOV
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# editors / os
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
